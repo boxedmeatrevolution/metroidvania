@@ -1,9 +1,8 @@
 {
   "resources": [
     {"id":{"name":"shd_lighting","path":"shaders/shd_lighting/shd_lighting.yy",},"order":0,},
-    {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},"order":0,},
-    {"id":{"name":"spr_test2_n","path":"sprites/spr_test2_n/spr_test2_n.yy",},"order":3,},
-    {"id":{"name":"spr_test2","path":"sprites/spr_test2/spr_test2.yy",},"order":2,},
+    {"id":{"name":"spr_test_normal_map","path":"sprites/spr_test_normal_map/spr_test_normal_map.yy",},"order":3,},
+    {"id":{"name":"spr_test","path":"sprites/spr_test/spr_test.yy",},"order":2,},
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},"order":1,},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":0,},
   ],
