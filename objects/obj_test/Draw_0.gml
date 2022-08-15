@@ -14,5 +14,3 @@ texture_set_stage(uniform_normal_map, normal_map);
 shader_set_uniform_f(uniform_normal_map_offset, normal_map_offset_x, normal_map_offset_y);
 draw_self();
 shader_reset();
-
-draw_text(5, 5, string([ global_light_x, global_light_y, global_light_z ]));
