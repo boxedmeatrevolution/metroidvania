@@ -1,6 +1,7 @@
 uniform vec3 u_GlobalLight;
 
 uniform sampler2D s_NormalMap;
+uniform sampler2D s_LightMap;
 uniform vec2 u_NormalMapOffset;
 
 varying vec2 v_TextureCoord;
