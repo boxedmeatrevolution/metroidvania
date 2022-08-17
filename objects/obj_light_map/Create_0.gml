@@ -22,3 +22,14 @@ kernel = [
 ];
 uniform_kernel = shader_get_uniform(shd_blur_1d, "u_Coeffs");
 uniform_dir = shader_get_uniform(shd_blur_1d, "u_Dir");
+
+uniform_light_pos = shader_get_uniform(shd_shadow_segment, "u_LightPos");
+
+uniform_light_radius_fraction = shader_get_uniform(shd_light_map_point, "u_LightRadiusFraction");
+
+vertex_format_begin();
+vertex_format_add_color();
+vertex_format_add_texcoord();
+vertex_format_add_texcoord();
+vertex_format_add_texcoord();
+format_shadow_segment = vertex_format_end();

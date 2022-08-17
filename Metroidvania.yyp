@@ -10,6 +10,8 @@
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"order":2,},
     {"id":{"name":"shd_light_map_point","path":"shaders/shd_light_map_point/shd_light_map_point.yy",},"order":2,},
     {"id":{"name":"shd_blur_1d","path":"shaders/shd_blur_1d/shd_blur_1d.yy",},"order":1,},
+    {"id":{"name":"shd_shadow_segment","path":"shaders/shd_shadow_segment/shd_shadow_segment.yy",},"order":3,},
+    {"id":{"name":"spr_light_point","path":"sprites/spr_light_point/spr_light_point.yy",},"order":5,},
     {"id":{"name":"spr_test_soft_normal_map","path":"sprites/spr_test_soft_normal_map/spr_test_soft_normal_map.yy",},"order":4,},
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},"order":1,},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":0,},
