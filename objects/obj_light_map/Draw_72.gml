@@ -2,6 +2,8 @@ gpu_push_state();
 gpu_set_tex_filter(true);
 gpu_set_zwriteenable(true);
 
+
+
 // Draw shadows.
 shader_set(shd_shadow_segment);
 draw_set_color(c_black);
@@ -89,18 +91,21 @@ with (obj_light_point) {
 draw_set_color(c_white);
 shader_reset();
 
+
+
 // Blur shadow maps.
 shader_set(shd_blur_1d);
 
 shader_set_uniform_f_array(uniform_kernel, kernel);
 
+var blur_radius = 8;
 with (obj_light_point) {
-	shader_set_uniform_f(other.uniform_dir, 0, 8 * surface_scale / surface_width);
+	shader_set_uniform_f(other.uniform_dir, 0, blur_radius * other.surface_scale * surface_scale / surface_width);
 	surface_set_target(surface_shadow_map_buffer);
 	draw_surface(surface_shadow_map, 0, 0);
 	surface_reset_target();
 
-	shader_set_uniform_f(other.uniform_dir, 8 * surface_scale / surface_width, 0);
+	shader_set_uniform_f(other.uniform_dir, blur_radius * other.surface_scale * surface_scale / surface_width, 0);
 	surface_set_target(surface_shadow_map);
 	draw_surface(surface_shadow_map_buffer, 0, 0);
 	surface_reset_target();
@@ -108,14 +113,16 @@ with (obj_light_point) {
 
 shader_reset();
 
+
+
 // Composite shadow maps to create light maps.
 for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
 	if (!surface_exists(surface_light_map[i])) {
-		surface_light_map[i] = surface_create(room_width, room_height);
+		surface_light_map[i] = surface_create(surface_width, surface_height);
 	}
 }
 if (!surface_exists(surface_light_map_buffer)) {
-	surface_light_map_buffer = surface_create(room_width, room_height);
+	surface_light_map_buffer = surface_create(surface_width, surface_height);
 }
 
 surface_set_target(surface_light_map_buffer);
@@ -130,28 +137,60 @@ for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
 	surface_reset_target();
 }
 
-for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
+var origin_x = round(x * surface_scale) / surface_scale;
+var origin_y = round(y * surface_scale) / surface_scale;
+surface_transform = [
+	1, 0, 0, 0,
+	0, 1, 0, 0,
+	0, 0, 1, 0,
+	-origin_x, -origin_y, 0, 1 / surface_scale,
+];
+surface_transform_inv = [
+	1, 0, 0, 0,
+	0, 1, 0, 0,
+	0, 0, 1, 0,
+	origin_x * surface_scale, origin_y * surface_scale, 0, surface_scale,
+];
 
+for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
 	with (obj_light_point) {
 		surface_copy(other.surface_light_map_buffer, 0, 0, other.surface_light_map[i]);
 
 		shader_set(shd_light_map_point);
 		surface_set_target(other.surface_light_map[i]);
+
 		texture_set_stage(other.uniform_blend, surface_get_texture(other.surface_light_map_buffer));
 		shader_set_uniform_i(other.uniform_harmonic_order, i);
-		matrix_stack_push(surface_transform_inv);
-		matrix_set(matrix_world, matrix_stack_top());
 		shader_set_uniform_f(other.uniform_light_intensity, light_intensity);
 		shader_set_uniform_f(other.uniform_light_radius_fraction, 2 * light_radius * surface_scale / surface_width);
-		draw_surface(surface_shadow_map, 0, 0);
-		matrix_stack_pop();
+		shader_set_uniform_f(other.uniform_viewport, other.surface_width, other.surface_height);
+
+		//matrix_stack_push(camera_get_view_mat(view_camera[0]));
+		matrix_stack_push(other.surface_transform);
+		matrix_stack_push(surface_transform_inv);
 		matrix_set(matrix_world, matrix_stack_top());
+
+		draw_surface(surface_shadow_map, 0, 0);
+
+		matrix_stack_pop();
+		matrix_stack_pop();
+		//matrix_stack_pop();
+		matrix_set(matrix_world, matrix_stack_top());
+
 		surface_reset_target();
 		shader_reset();
 	}
 }
 
+
+
 // Draw to room.
+matrix_stack_push(surface_transform_inv);
+matrix_set(matrix_world, matrix_stack_top());
 draw_surface(surface_light_map[1], 0, 0);
+matrix_stack_pop();
+matrix_set(matrix_world, matrix_stack_top());
+
+
 
 gpu_pop_state();

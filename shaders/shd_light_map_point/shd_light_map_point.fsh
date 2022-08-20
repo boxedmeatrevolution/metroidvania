@@ -6,6 +6,7 @@ uniform sampler2D s_Blend;
 uniform float u_LightIntensity;
 uniform float u_LightRadiusFraction;
 uniform int u_HarmonicOrder;
+uniform vec2 u_Viewport;
 
 #define PI 3.1415926538
 
@@ -29,6 +30,6 @@ void main()
 	} else if (u_HarmonicOrder == 4) {
 		harmonic =(2.0 * irradiance) / (3.0 * PI) * (cos_theta * cos_theta - sin_theta * sin_theta);
 	}
-    gl_FragColor.xyz = clamp(shadow.xyz * v_Colour.xyz * harmonic, -0.5, 0.5) + texture2D(s_Blend, gl_FragCoord.xy / vec2(1366.0, 768.0)).xyz;
+    gl_FragColor.xyz = clamp(shadow.xyz * v_Colour.xyz * harmonic, -0.5, 0.5) + texture2D(s_Blend, gl_FragCoord.xy / u_Viewport).xyz;
 	gl_FragColor.a = 1.0;
 }
