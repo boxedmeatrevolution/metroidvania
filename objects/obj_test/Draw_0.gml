@@ -14,3 +14,6 @@ texture_set_stage(uniform_normal_map, normal_map);
 shader_set_uniform_f(uniform_normal_map_offset, normal_map_offset_x, normal_map_offset_y);
 draw_self();
 shader_reset();
+
+draw_set_color(c_white);
+draw_text(5, 5, string(fps_real));

@@ -13,6 +13,7 @@
     {"id":{"name":"shd_shadow_segment","path":"shaders/shd_shadow_segment/shd_shadow_segment.yy",},"order":3,},
     {"id":{"name":"spr_light_point","path":"sprites/spr_light_point/spr_light_point.yy",},"order":5,},
     {"id":{"name":"spr_test_soft_normal_map","path":"sprites/spr_test_soft_normal_map/spr_test_soft_normal_map.yy",},"order":4,},
+    {"id":{"name":"obj_cursor_light","path":"objects/obj_cursor_light/obj_cursor_light.yy",},"order":6,},
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},"order":1,},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":0,},
   ],

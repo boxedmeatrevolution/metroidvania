@@ -1,4 +1,6 @@
-surface_light_map = noone;
+harmonic_order = 2;
+surface_light_map = array_create(2 * harmonic_order + 1, noone);
+surface_light_map_buffer = noone;
 
 kernel = [
 	0.0797,
@@ -25,7 +27,10 @@ uniform_dir = shader_get_uniform(shd_blur_1d, "u_Dir");
 
 uniform_light_pos = shader_get_uniform(shd_shadow_segment, "u_LightPos");
 
+uniform_light_intensity = shader_get_uniform(shd_light_map_point, "u_LightIntensity");
 uniform_light_radius_fraction = shader_get_uniform(shd_light_map_point, "u_LightRadiusFraction");
+uniform_harmonic_order = shader_get_uniform(shd_light_map_point, "u_HarmonicOrder");
+uniform_blend = shader_get_sampler_index(shd_light_map_point, "s_Blend");
 
 vertex_format_begin();
 vertex_format_add_color();
