@@ -80,6 +80,21 @@ if (state == STATE_NORMAL) {
 		sprite_index = spr_main_jump;
 		image_speed = 0;
 	}
+} else if (state == STATE_TRANSITION) {
+	if (transition_dir_x != 0) {
+		sprite_index = spr_main_walk;
+		image_xscale = abs(image_xscale) * transition_dir_x;
+		image_speed = abs(vel_x) / WALK_SPEED_MAX;
+		vel_x = transition_dir_x * WALK_SPEED_MAX;
+	}
+	if (transition_dir_y != 0) {
+		sprite_index = spr_main_jump;
+		image_speed = 0;
+		vel_y = transition_dir_y * WALK_SPEED_MAX;
+	}
+	if (!place_meeting(x - 32 * transition_dir_x, y - 32 * transition_dir_y, transition_zone)) {
+		state = STATE_NORMAL;
+	}
 }
 
 if (abs(vel_x) != 0) {
