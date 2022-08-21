@@ -30,7 +30,7 @@ void main()
 	vec3 harmonic3 = 2.0 * (texture2D(s_LightMapHarmonic3, light_map_coord).rgb + offset);
 	vec3 harmonic4 = 2.0 * (texture2D(s_LightMapHarmonic4, light_map_coord).rgb + offset); 
 	vec3 irradiance = vec3(0.0, 0.0, 0.0);
-	irradiance += (normal_len + 0.0 * sqrt(1.0 - normal_len * normal_len)) * (1.0 / PI) * harmonic0;
+	irradiance += (normal_len + 0.3) * (1.0 / PI) * harmonic0;
 	irradiance += normal_len * 0.5 * harmonic1 * sin_theta;
 	irradiance += normal_len * 0.5 * harmonic2 * cos_theta;
 	irradiance += normal_len * (2.0 / (3.0 * PI)) * harmonic3 * sin_2theta;
