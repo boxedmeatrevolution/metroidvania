@@ -9,6 +9,7 @@ uniform sampler2D s_LightShadowMap1;
 uniform sampler2D s_LightShadowMap2;
 uniform sampler2D s_LightShadowMap3;
 uniform sampler2D s_LightShadowMap4;
+uniform vec2 u_LightShadowMapOffset[NUM_LIGHTS];
 uniform vec2 u_LightShadowMapScale[NUM_LIGHTS];
 uniform vec2 u_LightCoord[NUM_LIGHTS];
 uniform float u_LightRadius[NUM_LIGHTS];

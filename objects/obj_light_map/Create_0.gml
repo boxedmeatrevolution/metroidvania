@@ -30,3 +30,12 @@ vertex_format_add_texcoord();
 vertex_format_add_texcoord();
 vertex_format_add_texcoord();
 format_shadow_segment = vertex_format_end();
+
+light_active = [];
+light_map_size_x = 6;
+light_map_size_y = 6;
+for (var ix = 0; ix < light_map_size_x; ++ix) {
+	for (var iy = 0; iy < light_map_size_y; ++iy) {
+		light_map[iy][ix] = [];
+	}
+}

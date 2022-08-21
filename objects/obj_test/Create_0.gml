@@ -8,6 +8,7 @@ uniform_light_shadow_map[1] = shader_get_sampler_index(shd_light_forward, "s_Lig
 uniform_light_shadow_map[2] = shader_get_sampler_index(shd_light_forward, "s_LightShadowMap2");
 uniform_light_shadow_map[3] = shader_get_sampler_index(shd_light_forward, "s_LightShadowMap3");
 uniform_light_shadow_map[4] = shader_get_sampler_index(shd_light_forward, "s_LightShadowMap4");
+uniform_light_shadow_map_offset = shader_get_uniform(shd_light_forward, "u_LightShadowMapOffset");
 uniform_light_shadow_map_scale = shader_get_uniform(shd_light_forward, "u_LightShadowMapScale");
 uniform_light_coord = shader_get_uniform(shd_light_forward, "u_LightCoord");
 uniform_light_radius = shader_get_uniform(shd_light_forward, "u_LightRadius");
