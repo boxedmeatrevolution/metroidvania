@@ -14,7 +14,7 @@ void main()
 	float mag = length(r);
 	float sin_theta = r.y / mag;
 	float cos_theta = r.x / mag;
-	float irradiance = u_LightIntensity * clamp((1.0 - mag) * exp(-mag / 0.5), 0.0, 1.0);
+	float irradiance = u_LightIntensity * clamp(1.0 - mag, 0.0, 1.0);//clamp((1.0 - mag) * exp(-mag / 0.5), 0.0, 1.0);
 	vec4 shadow = texture2D(gm_BaseTexture, v_TextureCoord);
 	float harmonic;
 	if (u_HarmonicOrder == 0) {

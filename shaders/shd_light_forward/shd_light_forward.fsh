@@ -48,7 +48,7 @@ void main()
 		vec3 source = u_LightIntensity[i] * u_LightColour[i].rgb;
 		vec2 shadow_coord = -0.5 * r / u_LightShadowMapScale[i] + vec2(0.5, 0.5);
 		vec3 shadow = sample_shadow_map(i, shadow_coord).rgb;
-		float falloff = clamp((1.0 - mag) * exp(-mag / 0.5), 0.0, 1.0);
+		float falloff = clamp(1.0 - mag, 0.0, 1.0);//clamp((1.0 - mag) * exp(-mag / 0.5), 0.0, 1.0);
 		float surface = max(dot(normal, r_unit), 0.0) + 0.3;
 		irradiance += source * shadow * falloff * surface;// * surface;
 	}

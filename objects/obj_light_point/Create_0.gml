@@ -1,7 +1,7 @@
 image_xscale = max(abs(image_xscale), abs(image_yscale));
 image_yscale = image_xscale;
 
-light_intensity = 4;
+light_intensity = 1;
 light_radius = 0.5 * sprite_width;
 
 surface_shadow_map = noone;

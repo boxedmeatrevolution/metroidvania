@@ -116,6 +116,9 @@ shader_reset();
 
 
 // Composite shadow maps to create light maps.
+if (!instance_exists(obj_ball_deferred)) {
+	exit;
+}
 for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
 	if (!surface_exists(surface_light_map[i])) {
 		surface_light_map[i] = surface_create(surface_width, surface_height);

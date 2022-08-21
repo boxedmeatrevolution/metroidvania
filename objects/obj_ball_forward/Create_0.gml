@@ -1,7 +1,4 @@
-//global_light_phi = 0;
-//global_light_theta = 45;
-
-normal_map_sprite = spr_ball_normal;
+normal_map_sprite = spr_test_soft_normal_map;
 uniform_normal_map = shader_get_sampler_index(shd_light_forward, "s_NormalMap");
 uniform_normal_map_offset = shader_get_uniform(shd_light_forward, "u_NormalMapOffset");
 
@@ -16,18 +13,6 @@ uniform_light_coord = shader_get_uniform(shd_light_forward, "u_LightCoord");
 uniform_light_radius = shader_get_uniform(shd_light_forward, "u_LightRadius");
 uniform_light_intensity = shader_get_uniform(shd_light_forward, "u_LightIntensity");
 uniform_light_colour = shader_get_uniform(shd_light_forward, "u_LightColour");
-/*
-uniform_viewport = shader_get_uniform(shd_light_deferred, "u_Viewport");
 
-
-uniform sampler2D s_NormalMap;
-uniform vec2 u_NormalMapOffset;
-
-uniform int num_lights;
-uniform sampler2D s_LightShadowMap[NUM_LIGHTS];
-uniform vec2 u_LightShadowMapOffset[NUM_LIGHTS];
-uniform vec2 u_LightShadowMapScale[NUM_LIGHTS];
-uniform vec2 u_LightCoord[NUM_LIGHTS];
-uniform float u_LightRadius[NUM_LIGHTS];
-uniform float u_LightIntensity[NUM_LIGHTS];
-uniform vec3 u_LightColour[NUM_LIGHTS];*/
+hspeed = random(10) - 5;
+vspeed = random(10) - 5;

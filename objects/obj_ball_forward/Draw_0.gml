@@ -1,7 +1,3 @@
-//var global_light_x = dsin(global_light_theta) * dcos(global_light_phi);
-//var global_light_y = dsin(global_light_theta) * dsin(global_light_phi);
-//var global_light_z = dcos(global_light_theta);
-
 var normal_map = sprite_get_texture(normal_map_sprite, image_index);
 var normal_map_uvs = sprite_get_uvs(normal_map_sprite, image_index);
 var sprite_uvs = sprite_get_uvs(sprite_index, image_index);
