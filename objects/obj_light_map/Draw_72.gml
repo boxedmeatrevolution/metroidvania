@@ -100,12 +100,12 @@ shader_set_uniform_f_array(uniform_kernel, kernel);
 
 var blur_radius = 8;
 with (obj_light_point) {
-	shader_set_uniform_f(other.uniform_dir, 0, blur_radius * other.surface_scale * surface_scale / surface_width);
+	shader_set_uniform_f(other.uniform_dir, 0, blur_radius * surface_scale / surface_width);
 	surface_set_target(surface_shadow_map_buffer);
 	draw_surface(surface_shadow_map, 0, 0);
 	surface_reset_target();
 
-	shader_set_uniform_f(other.uniform_dir, blur_radius * other.surface_scale * surface_scale / surface_width, 0);
+	shader_set_uniform_f(other.uniform_dir, blur_radius * surface_scale / surface_width, 0);
 	surface_set_target(surface_shadow_map);
 	draw_surface(surface_shadow_map_buffer, 0, 0);
 	surface_reset_target();
