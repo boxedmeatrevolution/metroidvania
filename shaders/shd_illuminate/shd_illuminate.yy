@@ -5,7 +5,7 @@
     "path": "folders/Shaders.yy",
   },
   "resourceVersion": "1.0",
-  "name": "shd_light_forward",
+  "name": "shd_illuminate",
   "tags": [],
   "resourceType": "GMShader",
 }

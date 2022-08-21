@@ -1,5 +1,7 @@
 #define NUM_LIGHTS (5)
 
+// TODO: Normal map angle, fuzzy shadow offset
+
 uniform sampler2D s_NormalMap;
 uniform vec2 u_NormalMapOffset;
 

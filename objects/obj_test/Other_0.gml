@@ -1,12 +1,13 @@
-while (x > room_width) {
-	x -= room_width;
+var padding = 64;
+if (x > room_width + padding) {
+	x -= room_width + 2 * padding;
 }
-while (x < 0) {
-	x += room_width;
+if (x < -padding) {
+	x += room_width + 2 * padding;
 }
-while (y > room_height) {
-	y -= room_height;
+if (y > room_height + padding) {
+	y -= room_height + 2 * padding;
 }
-while (y < 0) {
-	y += room_height;
+if (y < -padding) {
+	y += room_height + 2 * padding;
 }
