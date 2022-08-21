@@ -9,5 +9,5 @@ uniform_light_map[3] = shader_get_sampler_index(shd_light_deferred, "s_LightMapH
 uniform_light_map[4] = shader_get_sampler_index(shd_light_deferred, "s_LightMapHarmonic4");
 uniform_viewport = shader_get_uniform(shd_light_deferred, "u_Viewport");
 
-hspeed = random(10) - 5;
-vspeed = random(10) - 5;
+hspeed = random(1) - 0.5;
+vspeed = random(1) - 0.5;

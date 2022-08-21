@@ -14,5 +14,5 @@ uniform_light_radius = shader_get_uniform(shd_light_forward, "u_LightRadius");
 uniform_light_intensity = shader_get_uniform(shd_light_forward, "u_LightIntensity");
 uniform_light_colour = shader_get_uniform(shd_light_forward, "u_LightColour");
 
-hspeed = random(10) - 5;
-vspeed = random(10) - 5;
+hspeed = random(1) - 0.5;
+vspeed = random(1) - 0.5;
