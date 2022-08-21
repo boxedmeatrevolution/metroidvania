@@ -3,6 +3,8 @@
     {"id":{"name":"spr_test_normal_map","path":"sprites/spr_test_normal_map/spr_test_normal_map.yy",},"order":3,},
     {"id":{"name":"obj_shader_setup","path":"objects/obj_shader_setup/obj_shader_setup.yy",},"order":14,},
     {"id":{"name":"obj_light_point","path":"objects/obj_light_point/obj_light_point.yy",},"order":4,},
+    {"id":{"name":"spr_main_walk","path":"sprites/spr_main_walk/spr_main_walk.yy",},"order":12,},
+    {"id":{"name":"rm_platforming_test","path":"rooms/rm_platforming_test/rm_platforming_test.yy",},"order":1,},
     {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},"order":9,},
     {"id":{"name":"obj_light_controller","path":"objects/obj_light_controller/obj_light_controller.yy",},"order":3,},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},"order":4,},
@@ -13,6 +15,7 @@
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},"order":2,},
     {"id":{"name":"scr_illuminate_draw_sprite","path":"scripts/scr_illuminate_draw_sprite/scr_illuminate_draw_sprite.yy",},"order":2,},
     {"id":{"name":"scr_light_map_get_active","path":"scripts/scr_light_map_get_active/scr_light_map_get_active.yy",},"order":3,},
+    {"id":{"name":"spr_main_jump","path":"sprites/spr_main_jump/spr_main_jump.yy",},"order":14,},
     {"id":{"name":"obj_illuminate_controller","path":"objects/obj_illuminate_controller/obj_illuminate_controller.yy",},"order":13,},
     {"id":{"name":"scr_illuminate_end","path":"scripts/scr_illuminate_end/scr_illuminate_end.yy",},"order":1,},
     {"id":{"name":"spr_test_uniform_normal_map","path":"sprites/spr_test_uniform_normal_map/spr_test_uniform_normal_map.yy",},"order":6,},
@@ -27,8 +30,9 @@
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},"order":10,},
     {"id":{"name":"obj_cursor_light","path":"objects/obj_cursor_light/obj_cursor_light.yy",},"order":6,},
     {"id":{"name":"obj_fps_counter","path":"objects/obj_fps_counter/obj_fps_counter.yy",},"order":7,},
+    {"id":{"name":"obj_main","path":"objects/obj_main/obj_main.yy",},"order":15,},
     {"id":{"name":"shd_illuminate","path":"shaders/shd_illuminate/shd_illuminate.yy",},"order":4,},
-    {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":0,},
+    {"id":{"name":"rm_lighting_test","path":"rooms/rm_lighting_test/rm_lighting_test.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -44,7 +48,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
+    {"roomId":{"name":"rm_platforming_test","path":"rooms/rm_platforming_test/rm_platforming_test.yy",},},
+    {"roomId":{"name":"rm_lighting_test","path":"rooms/rm_lighting_test/rm_lighting_test.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
