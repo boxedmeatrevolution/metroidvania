@@ -185,11 +185,13 @@ for (var i = 0; i < 2 * harmonic_order + 1; ++i) {
 
 
 // Draw to room.
+/*
 matrix_stack_push(surface_transform_inv);
 matrix_set(matrix_world, matrix_stack_top());
 draw_surface(surface_light_map[1], 0, 0);
 matrix_stack_pop();
 matrix_set(matrix_world, matrix_stack_top());
+*/
 
 
 

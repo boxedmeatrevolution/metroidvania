@@ -4,7 +4,7 @@ surface_light_map_buffer = noone;
 
 surface_width_full = camera_get_view_width(view_camera[0]);
 surface_height_full = camera_get_view_height(view_camera[1]);
-surface_scale = 0.125;
+surface_scale = 0.5;
 surface_width = ceil(surface_scale * surface_width_full);
 surface_height = ceil(surface_scale * surface_height_full);
 

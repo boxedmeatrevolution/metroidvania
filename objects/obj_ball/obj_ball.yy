@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_test",
-    "path": "sprites/spr_test/spr_test.yy",
+    "name": "spr_ball",
+    "path": "sprites/spr_ball/spr_ball.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,7 +33,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_test",
+  "name": "obj_ball",
   "tags": [],
   "resourceType": "GMObject",
 }

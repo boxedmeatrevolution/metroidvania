@@ -8,8 +8,6 @@ uniform float u_LightRadiusFraction;
 uniform int u_HarmonicOrder;
 uniform vec2 u_Viewport;
 
-#define PI 3.1415926538
-
 void main()
 {
 	vec2 r = 2.0 * (v_TextureCoord - vec2(0.5, 0.5)) / u_LightRadiusFraction;
@@ -20,16 +18,16 @@ void main()
 	vec4 shadow = texture2D(gm_BaseTexture, v_TextureCoord);
 	float harmonic;
 	if (u_HarmonicOrder == 0) {
-		harmonic = irradiance / PI;
+		harmonic = irradiance;
 	} else if (u_HarmonicOrder == 1) {
-		harmonic = -0.5 * irradiance * sin_theta;
+		harmonic = irradiance * sin_theta;
 	} else if (u_HarmonicOrder == 2) {
-		harmonic = 0.5 * irradiance * cos_theta;
+		harmonic = irradiance * cos_theta;
 	} else if (u_HarmonicOrder == 3) {
-		harmonic = -(2.0 * irradiance) / (3.0 * PI) * (2.0 * sin_theta * cos_theta);
+		harmonic = irradiance * (2.0 * sin_theta * cos_theta);
 	} else if (u_HarmonicOrder == 4) {
-		harmonic =(2.0 * irradiance) / (3.0 * PI) * (cos_theta * cos_theta - sin_theta * sin_theta);
+		harmonic = irradiance * (cos_theta * cos_theta - sin_theta * sin_theta);
 	}
-    gl_FragColor.xyz = clamp(shadow.xyz * v_Colour.xyz * harmonic, -0.5, 0.5) + texture2D(s_Blend, gl_FragCoord.xy / u_Viewport).xyz;
+    gl_FragColor.xyz = clamp(shadow.rgb * v_Colour.rgb * 0.5 * harmonic, -0.5, 0.5) + texture2D(s_Blend, gl_FragCoord.xy / u_Viewport).xyz;
 	gl_FragColor.a = 1.0;
 }
